@@ -1,0 +1,48 @@
+
+
+With the COCOMO method and COCOMO formula. we are able to calculate and estimate effort for person-month, 
+the lines of code needed, and the number of person needed for this project.
+-----------------------------------------------
+
+FP= c1I + c2O + c3Q + c4F + c5E 
+
+
+C1 = 4
+C2 = 5
+C3 = 10
+C4 = 4
+C5 = 7
+
+  
+I= 2 (Jpacmangame, JpacmanUI )
+O= 2 (Jpacmangame, JpacmanUI )
+Q= 0
+F= 9, number of internal data files ( 6 maven +  3 extra files )
+E= 5, number of external  interfaces
+
+
+FP= 4*2 +5*2 + 10*0 + 4*9 + 7*5 = 89
+---------------------------------------------------
+
+LOC = Z * FP 
+
+Z= java = 9
+
+LOC = 9*89 = 801 lines
+
+---------------------------------------------
+
+
+E(Cocomo)=a*KLOC^b *Y
+
+KLOC= estimated project size = 0.801
+
+a,b= Since we only have 3 people in our group, we will choose organic, a= 2.4 b= 1.05
+
+Y = required reliability ++ , execution time ++, memory ++ ,schedule constraints ++
+    quality of programmers -- ,programming language (PL) experience -- 
+   = 2
+
+
+
+E(Cocomo)= 2.4*0.801^1.05*2 = 3.802 person-month
