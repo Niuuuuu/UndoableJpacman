@@ -1,0 +1,46 @@
+﻿jPacman - new user story and scenarios
+Sep 27, 2014
+
+STORY 7 --UNDO
+As a player, I want to be able to undo a move I regret, including all ghost moves made since
+my previous move, so that I can continue the game in the state just before my last move.
+
+Scenario S7.1: pacman moves back
+Given that the game has started,
+and my pacman just moved to an empty cell,
+when i press the undo button,
+Then my pacman moves back to the previous cell he was in
+
+Scenario S7.2: pacman puts food back
+Given that the game has started,
+and my pacman just ate food,
+when i press the undo button,
+Then my pacman moves back to the previous cell he was in,
+and the points I had earned for eating are decreased from my score,
+and the food reappears in its cell
+
+Scenario S7.3: ghosts move back
+Given that the game has started,
+and at least one ghost is moving in the cells,
+when i press the undo button,
+Then all ghosts move back to the previous cell they were in (could be the cage)
+
+Scenario S7.4: undo from failed move
+Given that the game has started,
+and my pacman’s current move has failed (See scenario S2.4)
+when i press the undo button,
+Then my pacman should remain in the same cell
+
+Scenario S7.5: the player dies
+Given that the game has started,
+and ghost just moved over my pacman,
+when i press the undo button, the pacman should revive
+Then my pacman and the ghosts should be able to moe to their previous positions
+
+
+Scenario S7.6: undo from win
+Given that the game has started,
+and my pacman just ate the last food,
+when i press the undo button,
+Then my pacman and the ghosts should not move back to their previous positions,
+and I win the game
